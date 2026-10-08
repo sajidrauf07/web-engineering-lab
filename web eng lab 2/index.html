@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Website</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1 id="greeting">Welcome to Our Website</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#hours" aria-current="location">Office Hours</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section id="hours">
+            <h2>Office Hours</h2>
+
+            <figure>
+                <svg role="img" aria-labelledby="clock-title" width="50" height="50">
+                    <title id="clock-title">Clock Icon</title>
+                    <circle cx="25" cy="25" r="20" stroke="black" fill="none"/>
+                    <line x1="25" y1="25" x2="25" y2="15" stroke="black"/>
+                    <line x1="25" y1="25" x2="35" y2="25" stroke="black"/>
+                </svg>
+                <figcaption>Office Schedule</figcaption>
+            </figure>
+
+            <table>
+                <caption>Weekly Office Hours</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Opening Time</th>
+                        <th scope="col">Closing Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Monday-Friday</th>
+                        <td><time datetime="09:00">9:00 AM</time></td>
+                        <td><time datetime="17:00">5:00 PM</time></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Saturday</th>
+                        <td><time datetime="10:00">10:00 AM</time></td>
+                        <td><time datetime="14:00">2:00 PM</time></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <svg aria-hidden="true" width="100%" height="40">
+            <line x1="0" y1="20" x2="1000" y2="20"
+                  stroke="gray"
+                  stroke-width="2"/>
+        </svg>
+
+        
+        <section id="feedback">
+            <h2>Send Feedback</h2>
+
+            <form>
+
+                <label for="name">Name *</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email *</label>
+                <input
+                    type="email"
+                    id="email"
+                    required
+                    aria-describedby="emailHint">
+
+                <small id="emailHint">
+                    Enter a valid email address.
+                </small>
+
+                <fieldset>
+                    <legend>Topic</legend>
+
+                    <input type="radio" id="general"
+                           name="topic" value="general">
+                    <label for="general">General</label>
+
+                    <input type="radio" id="support"
+                           name="topic" value="support">
+                    <label for="support">Support</label>
+
+                    <input type="radio" id="other"
+                           name="topic" value="other">
+                    <label for="other">Other</label>
+                </fieldset>
+
+                <label for="message">Message *</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    
+    <footer>
+        <address>
+            Sajid Rauf<br>
+            Email: example@gmail.com<br>
+            Islamabad, Pakistan
+        </address>
+    </footer>
+
+</body>
+</html>
